@@ -1,7 +1,7 @@
 /*
 
- Este programa muestra como definir un fuente de luz y
- el dibujo de algunas primitivas con sus respectivos materiales
+@Autor Noe Sosa
+Proyecto
 */
 
 #include <stdlib.h>
@@ -11,7 +11,7 @@ GLfloat elevacion =   0.0f;
 GLfloat azimitud  =   0.0f;
 GLfloat giro      =   0.0f;
 
-//parametros para construir la grilla
+//parametros para construir
 #define DEF_floorGridScale	1.0
 #define DEF_floorGridXSteps	10.0
 #define DEF_floorGridZSteps	10.0
@@ -24,7 +24,7 @@ glRotated(-elevation, 1.0, 0.0, 0.0);
 glRotated(azimuth, 0.0, 0.0, 1.0);
 }
 
-//Inicializa las propiedades de la fuente de luz
+//Inicializa Fuente de luz
 static void init(void)
 {
     GLfloat light_ambient[] = { 0.75, 0.75, 0.75, 1.0 };
@@ -45,17 +45,17 @@ static void init(void)
 
 void display (void)
 {
-    //Defino un material Rojo
+    //Rojo
     GLfloat mat_ambient_toro[] = {0.05, 0.05, 0.05, 1.0f};
     GLfloat mat_diffuse_toro[] = { 0.8, 0.0, 0.0, 1.0f};
     GLfloat mat_specular_toro[] = {0.9, 0.8, 0.8, 1.0f};
 
-    //Defino un material Azul
+    //Azul
     GLfloat mat_ambient_cubo[] = {0.1, 0.1, 0.1, 1.0f};
     GLfloat mat_diffuse_cubo[] = {0.0, 0.0, 0.8, 1.0f};
     GLfloat mat_specular_cubo[] = {0.9, 0.9, 0.9, 1.0f};
 
-    //Defino un material Verde
+    //Verde
     GLfloat mat_ambient_esfera[] = {0.1, 0.1, 0.1, 1.0f};
     GLfloat mat_diffuse_esfera[] = {0.0, 0.7, 0.0, 1.0f};
     GLfloat mat_specular_esfera[] = {0.8, 0.8, 0.8, 1.0f};
@@ -68,7 +68,7 @@ void display (void)
     glLoadIdentity();
     polarView(15.0f, giro, elevacion, azimitud);
 
-    //Dibujo la Grilla
+    //Dibujo
     glPushMatrix();
     glPushAttrib( GL_LIGHTING_BIT );
     glDisable( GL_LIGHTING );
@@ -92,7 +92,7 @@ void display (void)
     glPopAttrib();
     glPopMatrix();
 
-    //Dibuja el Toro
+    //Dibujo
     glMaterialfv (GL_FRONT, GL_AMBIENT, mat_ambient_toro);
     glMaterialfv (GL_FRONT, GL_DIFFUSE, mat_diffuse_toro);
     glMaterialfv (GL_FRONT, GL_SPECULAR, mat_specular_toro);
@@ -104,7 +104,7 @@ void display (void)
     glutSolidTorus (0.3, 0.8, 12, 24);
     glPopMatrix ();
 
-    //Dibuja el cubo
+    //Dibujo
     glMaterialfv (GL_FRONT, GL_AMBIENT, mat_ambient_cubo);
     glMaterialfv (GL_FRONT, GL_DIFFUSE, mat_diffuse_cubo);
     glMaterialfv (GL_FRONT, GL_SPECULAR, mat_specular_cubo);
@@ -115,7 +115,7 @@ void display (void)
     glutSolidCube (2.0);
     glPopMatrix ();
 
-    //Dibuja la esfera de radio 2.5
+    //Esfera de radio 2.5
     glMaterialfv (GL_FRONT, GL_AMBIENT, mat_ambient_esfera);
     glMaterialfv (GL_FRONT, GL_DIFFUSE, mat_diffuse_esfera);
     glMaterialfv (GL_FRONT, GL_SPECULAR, mat_specular_esfera);
