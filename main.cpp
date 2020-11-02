@@ -1,7 +1,8 @@
 /*
 
 @Autor Noe Sosa
-Proyecto
+Proyecto Final
+:)
 */
 
 #include <stdlib.h>
